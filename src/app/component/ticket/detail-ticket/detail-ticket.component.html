@@ -1,0 +1,13 @@
+<h2>Ticket {{ticketDetail?.id}}</h2>
+<div class="detail-ticket" *ngIf="ticketDetail">
+    <div class="id-ticket">id : {{ticketDetail?.id}}</div>
+    <div class="assigneeId">Assigne :
+        <select (change)="setAssigne($event.target.value)">
+            Ticket not assigned
+            <option *ngFor="let user of listUsers" [selected]="ticketDetail.assigneeId == user.id" [value]="user.id">{{user.name}}</option>
+        </select>
+    </div>
+    <div class="completed">Completed : <input type="checkbox" id="scales" name="scales" [checked]="ticketDetail?.completed" (click)="setCompleted(!ticketDetail.completed)"></div>
+    <div class="description">Description : {{ticketDetail?.description}}</div>
+    <button (click)="updateticket()">Update ticket</button>
+</div>

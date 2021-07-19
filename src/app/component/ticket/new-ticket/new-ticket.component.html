@@ -1,0 +1,9 @@
+<h2>New Ticket</h2>
+<form [formGroup]="formTicket">
+    <div>
+        <label for="description">Description : </label><input id="description" type="text"
+                                                              formControlName="description"
+                                                              placeholder="Description">
+    </div>
+    <button (click)="createticket()">Create ticket</button>
+</form>

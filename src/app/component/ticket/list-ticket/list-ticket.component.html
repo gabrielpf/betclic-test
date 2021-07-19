@@ -1,0 +1,8 @@
+<h2>Tickets</h2>
+
+<ul>
+    <li *ngFor="let ticket of tickets">
+        Ticket: {{ ticket.id }}, {{ ticket.description }}
+        <button [routerLink]="'detail/' + ticket.id ">Go</button>
+    </li>
+</ul>
